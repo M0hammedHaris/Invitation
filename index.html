@@ -6,138 +6,169 @@
 <title>Mohammed Haris &amp; Haseena Begam — Nikkah Invitation</title>
 <meta name="description" content="You are invited to the Nikkah of Mohammed Haris K &amp; Haseena Begam A, Monday 28 September 2026 at HMO Auditorium." />
 
-<!-- Open Graph -->
 <meta property="og:title" content="Mohammed Haris &amp; Haseena Begam — Nikkah Invitation" />
 <meta property="og:description" content="You are invited to the Nikkah of Mohammed Haris K &amp; Haseena Begam A, Monday 28 September 2026 at HMO Auditorium." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://m0hammedharis.github.io/Invitation/" />
 <meta property="og:image" content="https://m0hammedharis.github.io/Invitation/assets/og-image.svg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#fbf7f0" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="is-loading">
 
-<div class="motif-corner motif-corner--tl" aria-hidden="true"></div>
-<div class="motif-corner motif-corner--br" aria-hidden="true"></div>
+<!-- ══ Opening curtain: gold arch draws itself, then lifts away ══ -->
+<div class="curtain" id="curtain" role="presentation">
+  <svg class="curtain-arch" viewBox="0 0 200 260" fill="none" aria-hidden="true">
+    <path class="draw" d="M100 12 C 152 12 182 54 182 104 L182 240 L18 240 L18 104 C18 54 48 12 100 12 Z" />
+    <path class="draw draw-2" d="M100 34 C 138 34 160 66 160 106 L160 218 L40 218 L40 106 C40 66 62 34 100 34 Z" />
+    <circle class="draw draw-3" cx="100" cy="104" r="26" />
+    <path class="draw draw-3" d="M100 78 L108 96 L127 98 L113 111 L117 130 L100 120 L83 130 L87 111 L73 98 L92 96 Z" />
+  </svg>
+  <p class="curtain-word">بِسْمِ اللَّهِ</p>
+</div>
 
-<!-- Hero -->
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- Gold thread that fills as you scroll -->
+<div class="thread" aria-hidden="true"><div class="thread-fill" id="thread-fill"></div></div>
+
+<div class="frame frame--tl" aria-hidden="true"></div>
+<div class="frame frame--br" aria-hidden="true"></div>
+
+<!-- ══ Hero ══ -->
 <header class="hero">
-  <p class="bismillah anim" style="--d:0.1s">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+  <div class="hero-glow" aria-hidden="true"></div>
 
-  <div class="crescent anim" style="--d:0.4s" aria-hidden="true">☪</div>
+  <p class="bismillah stage" style="--d:.15s">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+  <div class="crescent stage" style="--d:.45s" aria-hidden="true">
+    <svg viewBox="0 0 64 64" fill="none">
+      <mask id="crescent-cut">
+        <rect width="64" height="64" fill="#fff"/>
+        <circle cx="41" cy="30" r="21" fill="#000"/>
+      </mask>
+      <g class="spin-slow">
+        <circle cx="30" cy="33" r="22" fill="currentColor" mask="url(#crescent-cut)"/>
+        <path d="M50 14l2.2 5 5.4.6-4 3.6 1.1 5.3-4.7-2.7-4.7 2.7 1.1-5.3-4-3.6 5.4-.6z" fill="currentColor" opacity=".85"/>
+      </g>
+    </svg>
+  </div>
 
   <h1 class="names">
-    <span class="name anim" style="--d:0.65s">Mohammed Haris K</span>
-    <span class="amp anim" style="--d:0.9s">&amp;</span>
-    <span class="name anim" style="--d:1.05s">Haseena Begam A</span>
+    <span class="name" data-split data-delay="0.7">Mohammed Haris K</span>
+    <span class="amp stage" style="--d:1.5s">&amp;</span>
+    <span class="name" data-split data-delay="1.7">Haseena Begam A</span>
   </h1>
 
-  <p class="tagline anim" style="--d:1.35s">request the honour of your presence at their Nikkah</p>
+  <p class="tagline stage" style="--d:2.6s">request the honour of your presence at their Nikkah</p>
+  <p class="hero-date stage" style="--d:2.85s"><span>Monday</span><i>·</i><span>28 September 2026</span></p>
 
-  <p class="hero-date anim" style="--d:1.55s">Monday, 28 September 2026</p>
+  <div class="rule stage" style="--d:3.1s" aria-hidden="true"><span></span><b>✦</b><span></span></div>
 
-  <div class="divider anim" style="--d:1.75s" aria-hidden="true">
-    <span></span><span class="divider-star">✦</span><span></span>
+  <div class="scroll-cue stage" style="--d:3.5s" aria-hidden="true">
+    <span>scroll</span><i></i>
   </div>
 </header>
 
 <main>
 
-  <!-- Quranic Verse -->
-  <section class="section verse-section reveal" id="verse">
-    <p class="arabic-verse">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
-    </p>
-    <p class="verse-translation">
-      "And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
-    </p>
-    <p class="verse-ref">— Surah Ar-Rum 30:21</p>
+  <!-- ══ Verse ══ -->
+  <section class="section verse" id="verse">
+    <div class="reveal" data-reveal>
+      <p class="arabic">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+      </p>
+    </div>
+    <div class="reveal" data-reveal data-reveal-delay="180">
+      <p class="verse-en">“And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts.”</p>
+      <p class="verse-ref">Surah Ar-Rum · 30:21</p>
+    </div>
   </section>
 
-  <div class="section-divider reveal" aria-hidden="true"><span></span><span class="divider-star">✦</span><span></span></div>
+  <div class="rule-wide reveal" data-reveal aria-hidden="true"><span></span><b>✦</b><span></span></div>
 
-  <!-- Countdown -->
-  <section class="section countdown-section reveal" id="countdown">
-    <h2 class="section-title">Counting Down to Our Nikkah</h2>
-    <div class="countdown" id="countdown-timer" role="timer" aria-live="polite">
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-days">--</span>
-        <span class="countdown-label">Days</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-hours">--</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-minutes">--</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
+  <!-- ══ Countdown ══ -->
+  <section class="section countdown-section" id="countdown">
+    <h2 class="eyebrow reveal" data-reveal>Counting down to our Nikkah</h2>
+
+    <div class="countdown reveal" data-reveal data-reveal-delay="150" id="countdown-timer" role="timer" aria-live="polite">
+      <div class="unit"><div class="flip" id="cd-days"><span class="flip-face">--</span></div><span class="unit-label">Days</span></div>
+      <div class="unit"><div class="flip" id="cd-hours"><span class="flip-face">--</span></div><span class="unit-label">Hours</span></div>
+      <div class="unit"><div class="flip" id="cd-minutes"><span class="flip-face">--</span></div><span class="unit-label">Minutes</span></div>
+      <div class="unit"><div class="flip" id="cd-seconds"><span class="flip-face">--</span></div><span class="unit-label">Seconds</span></div>
     </div>
+
     <p class="countdown-message" id="countdown-message"></p>
   </section>
 
-  <div class="section-divider reveal" aria-hidden="true"><span></span><span class="divider-star">✦</span><span></span></div>
+  <div class="rule-wide reveal" data-reveal aria-hidden="true"><span></span><b>✦</b><span></span></div>
 
-  <!-- Event Details -->
-  <section class="section details-section reveal" id="details">
-    <h2 class="section-title">Event Details</h2>
-    <div class="details-card">
-      <div class="detail-row">
-        <span class="detail-icon" aria-hidden="true">📅</span>
-        <div>
-          <p class="detail-label">Date</p>
-          <p class="detail-value">Monday, 28 September 2026</p>
-        </div>
-      </div>
-      <div class="detail-row">
-        <span class="detail-icon" aria-hidden="true">📍</span>
-        <div>
-          <p class="detail-label">Venue</p>
-          <p class="detail-value">HMO Auditorium</p>
-        </div>
+  <!-- ══ Details ══ -->
+  <section class="section details" id="details">
+    <h2 class="eyebrow reveal" data-reveal>Event details</h2>
+
+    <div class="card reveal" data-reveal data-reveal-delay="120">
+      <div class="card-shine" aria-hidden="true"></div>
+
+      <div class="row">
+        <span class="row-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </span>
+        <div><p class="row-label">Date</p><p class="row-value">Monday, 28 September 2026</p></div>
       </div>
 
-      <a class="btn btn-primary" id="directions-btn"
+      <div class="row">
+        <span class="row-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        </span>
+        <div><p class="row-label">Venue</p><p class="row-value">HMO Auditorium</p></div>
+      </div>
+
+      <a class="btn btn-gold" id="directions-btn"
          href="https://maps.app.goo.gl/dmvWqomb78h47xn18?g_st=ic"
          target="_blank" rel="noopener noreferrer">
-        Get Directions
+        <span>Get Directions</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
       </a>
 
-      <div class="map-embed">
+      <div class="map">
         <iframe
           title="HMO Auditorium location"
           src="https://maps.google.com/maps?q=HMO%20Auditorium&t=&z=15&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <div class="section-divider reveal" aria-hidden="true"><span></span><span class="divider-star">✦</span><span></span></div>
+  <div class="rule-wide reveal" data-reveal aria-hidden="true"><span></span><b>✦</b><span></span></div>
 
-  <!-- Share -->
-  <section class="section share-section reveal" id="share">
-    <h2 class="section-title">Share the Joy</h2>
-    <p class="share-text">Help us spread the word — share this invitation with your loved ones.</p>
-    <button class="btn btn-secondary" id="copy-link-btn" type="button">
+  <!-- ══ Share ══ -->
+  <section class="section share" id="share">
+    <h2 class="eyebrow reveal" data-reveal>Share the joy</h2>
+    <p class="share-text reveal" data-reveal data-reveal-delay="120">Help us spread the word — share this invitation with your loved ones.</p>
+    <button class="btn btn-ghost reveal" data-reveal data-reveal-delay="220" id="copy-link-btn" type="button">
+      <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="check-path" d="M4 12.5l5 5L20 7"/></svg>
       <span id="copy-link-label">Copy Invitation Link</span>
     </button>
   </section>
 
 </main>
 
-<footer class="footer reveal">
-  <div class="divider" aria-hidden="true"><span></span><span class="divider-star">✦</span><span></span></div>
-  <p class="dua">May Allah bless this union with love, mercy, and tranquility.</p>
+<footer class="footer">
+  <div class="rule-wide reveal" data-reveal aria-hidden="true"><span></span><b>✦</b><span></span></div>
+  <p class="dua reveal" data-reveal>May Allah bless this union with love, mercy, and tranquility.</p>
+  <p class="ameen reveal" data-reveal data-reveal-delay="150">آمين</p>
 </footer>
 
 <script src="script.js"></script>

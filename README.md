@@ -1,4 +1,4 @@
-# Nikkah Invitation
+# Nikkah Invitation — Animated
 
 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
 
@@ -8,8 +8,6 @@ You are cordially invited to the Nikkah of
 
 **Date:** Monday, 28 September 2026
 **Venue:** HMO Auditorium
-
-**Live invitation:** https://m0hammedharis.github.io/Invitation/
 
 > "And among His signs is this: He created for you mates from among
 > yourselves, that you may dwell in tranquility with them, and He has put
