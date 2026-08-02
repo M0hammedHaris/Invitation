@@ -1,16 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fbf7f0"/>
-      <stop offset="100%" stop-color="#f4ede1"/>
-    </linearGradient>
+    <radialGradient id="a1" cx="12%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#d8b26c" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#d8b26c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a2" cx="95%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#7fa88b" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7fa88b" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#b9974f" stroke-width="2" opacity="0.5"/>
-  <text x="600" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#6f8064">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
-  <text x="600" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Mohammed Haris K</text>
-  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="40" fill="#c99a9a">&amp;</text>
-  <text x="600" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Haseena Begam A</text>
-  <text x="600" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6b6058">request the honour of your presence at their Nikkah</text>
-  <text x="600" y="550" text-anchor="middle" font-family="Georgia, serif" font-size="24" letter-spacing="2" fill="#6f8064">MONDAY, 28 SEPTEMBER 2026</text>
+
+  <rect width="1200" height="630" fill="#0d1210"/>
+  <rect width="1200" height="630" fill="url(#a1)"/>
+  <rect width="1200" height="630" fill="url(#a2)"/>
+
+  <text x="960" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="200" fill="#eceae3" opacity="0.06">28.09.26</text>
+
+  <text x="80" y="122" font-family="Georgia, serif" font-size="30" fill="#d8b26c">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
+
+  <line x1="80" y1="176" x2="126" y2="176" stroke="#d8b26c" stroke-width="2"/>
+  <text x="142" y="183" font-family="Helvetica, Arial, sans-serif" font-size="19" letter-spacing="6" fill="#97a29a">THE NIKKAH OF</text>
+
+  <text x="80" y="290" font-family="Georgia, serif" font-size="92" fill="#eceae3">Mohammed Haris K</text>
+  <text x="80" y="386" font-family="Georgia, serif" font-style="italic" font-size="60" fill="#d8b26c">&amp;</text>
+  <text x="146" y="386" font-family="Georgia, serif" font-size="92" fill="#eceae3">Haseena Begam A</text>
+
+  <line x1="80" y1="448" x2="1120" y2="448" stroke="#eceae3" stroke-width="1" opacity="0.14"/>
+
+  <text x="80" y="492" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="5" fill="#97a29a">DATE</text>
+  <text x="80" y="530" font-family="Georgia, serif" font-size="34" fill="#eceae3">Monday, 28 September 2026</text>
+
+  <text x="620" y="492" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="5" fill="#97a29a">VENUE</text>
+  <text x="620" y="530" font-family="Georgia, serif" font-size="34" fill="#eceae3">HMO Auditorium</text>
 </svg>
