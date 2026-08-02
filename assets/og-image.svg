@@ -1,16 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fbf7f0"/>
-      <stop offset="100%" stop-color="#f4ede1"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#fffaf5"/>
+      <stop offset="100%" stop-color="#f6ebe1"/>
     </linearGradient>
+    <linearGradient id="env" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#f9efe3"/>
+      <stop offset="100%" stop-color="#edddc9"/>
+    </linearGradient>
+    <radialGradient id="wax" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#c4595c"/>
+      <stop offset="55%" stop-color="#a53f43"/>
+      <stop offset="100%" stop-color="#7d2b30"/>
+    </radialGradient>
   </defs>
+
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#b9974f" stroke-width="2" opacity="0.5"/>
-  <text x="600" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#6f8064">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
-  <text x="600" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Mohammed Haris K</text>
-  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="40" fill="#c99a9a">&amp;</text>
-  <text x="600" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Haseena Begam A</text>
-  <text x="600" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6b6058">request the honour of your presence at their Nikkah</text>
-  <text x="600" y="550" text-anchor="middle" font-family="Georgia, serif" font-size="24" letter-spacing="2" fill="#6f8064">MONDAY, 28 SEPTEMBER 2026</text>
+
+  <!-- Envelope -->
+  <g transform="translate(80 150)">
+    <rect width="330" height="220" rx="10" fill="url(#env)" stroke="#d9c3a8"/>
+    <path d="M0 0 L165 122 L330 0" fill="none" stroke="#d0b696" stroke-width="2"/>
+    <circle cx="165" cy="112" r="34" fill="url(#wax)"/>
+    <text x="165" y="119" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#f7dede">M&amp;H</text>
+  </g>
+
+  <!-- Text -->
+  <text x="480" y="176" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#7c6a63">YOU ARE INVITED TO THE NIKKAH OF</text>
+
+  <text x="480" y="256" font-family="Georgia, serif" font-size="58" fill="#40332f">Mohammed Haris K</text>
+  <text x="480" y="318" font-family="Georgia, serif" font-style="italic" font-size="38" fill="#c08a86">&amp;</text>
+  <text x="524" y="318" font-family="Georgia, serif" font-size="58" fill="#40332f">Haseena Begam A</text>
+
+  <line x1="480" y1="366" x2="1120" y2="366" stroke="#bd9a55" stroke-width="1" opacity="0.6"/>
+
+  <text x="480" y="412" font-family="Georgia, serif" font-size="30" fill="#6f8168">Monday, 28 September 2026</text>
+  <text x="480" y="456" font-family="Georgia, serif" font-size="30" fill="#6f8168">HMO Auditorium</text>
+
+  <text x="480" y="524" font-family="Georgia, serif" font-size="26" fill="#7c6a63">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
 </svg>
