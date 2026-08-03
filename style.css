@@ -612,22 +612,17 @@ main { position: relative; z-index: 3; }
 .btn-ghost.is-copied .check-path { animation: drawCheck .45s var(--ease) forwards; }
 @keyframes drawCheck { to { stroke-dashoffset: 0; } }
 
-.cal-actions {
+/* Sits just under Get Directions so the two read as a pair */
+.btn-cal {
   display: flex;
-  flex-direction: column;
-  gap: .7rem;
-  margin-top: .7rem;
-}
-.cal-actions .btn { width: 100%; }
-
-@media (min-width: 480px) {
-  .cal-actions { flex-direction: row; }
+  width: 100%;
+  margin-top: .9rem;
 }
 
 /* ── Map ─────────────────────────────────────── */
 
 .map {
-  margin-top: 1.3rem;
+  margin-top: 1.9rem;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(185, 151, 79, .24);
