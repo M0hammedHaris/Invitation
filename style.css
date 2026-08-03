@@ -400,16 +400,9 @@ main {
   color: #fff;
 }
 
-.calendar-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.calendar-actions .btn {
-  flex: 1 1 auto;
-}
+/* Directions and Add to Calendar read as a pair, set apart from the map */
+#directions-btn { margin-top: 0.5rem; }
+#cal-btn { margin-bottom: 0.5rem; }
 
 /* Footer */
 .footer {
