@@ -77,6 +77,66 @@
     document.body.removeChild(textarea);
   }
 
+  /* ===== Add to calendar ===== */
+  var EVENT_TITLE = "Mohammed Haris K & Hasina Begam A — Nikkah";
+  var EVENT_LOCATION = "HMO Auditorium";
+  var EVENT_DESCRIPTION = "You are cordially invited to the Nikkah of Mohammed Haris K & Hasina Begam A.";
+  var EVENT_START = "20260928";
+  var EVENT_END = "20260929"; // exclusive end, so the all-day event covers the 28th only
+
+  function icsTimestamp(date) {
+    function pad(n) { return String(n).padStart(2, "0"); }
+    return date.getUTCFullYear() + pad(date.getUTCMonth() + 1) + pad(date.getUTCDate()) +
+      "T" + pad(date.getUTCHours()) + pad(date.getUTCMinutes()) + pad(date.getUTCSeconds()) + "Z";
+  }
+
+  function buildIcs() {
+    var lines = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Nikkah Invitation//EN",
+      "CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT",
+      "UID:nikkah-" + EVENT_START + "@m0hammedharis.github.io",
+      "DTSTAMP:" + icsTimestamp(new Date()),
+      "DTSTART;VALUE=DATE:" + EVENT_START,
+      "DTEND;VALUE=DATE:" + EVENT_END,
+      "SUMMARY:" + EVENT_TITLE,
+      "DESCRIPTION:" + EVENT_DESCRIPTION,
+      "LOCATION:" + EVENT_LOCATION,
+      "END:VEVENT",
+      "END:VCALENDAR"
+    ];
+    return lines.join("\r\n");
+  }
+
+  var calGoogleBtn = document.getElementById("cal-google-btn");
+  if (calGoogleBtn) {
+    var gParams = new URLSearchParams({
+      action: "TEMPLATE",
+      text: EVENT_TITLE,
+      dates: EVENT_START + "/" + EVENT_END,
+      details: EVENT_DESCRIPTION,
+      location: EVENT_LOCATION
+    });
+    calGoogleBtn.href = "https://calendar.google.com/calendar/render?" + gParams.toString();
+  }
+
+  var calIcsBtn = document.getElementById("cal-ics-btn");
+  if (calIcsBtn) {
+    calIcsBtn.addEventListener("click", function () {
+      var blob = new Blob([buildIcs()], { type: "text/calendar;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "nikkah-mohammed-hasina.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    });
+  }
+
   /* ===== Scroll reveal ===== */
   var revealEls = document.querySelectorAll(".reveal");
 
