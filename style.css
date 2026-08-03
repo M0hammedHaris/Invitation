@@ -698,13 +698,8 @@ body.is-sealed { overflow: hidden; height: 100%; }
 .is-copied .ico-check { display: block; }
 .is-copied { color: var(--green); border-color: var(--green); background: rgba(111, 129, 104, .1); }
 
-.cal-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  justify-content: center;
-}
-.cal-actions .btn-solid { margin-top: 0; }
+/* btn-solid carries a top margin for its use inside the card; not needed here */
+.btn-cal { margin-top: 0; }
 
 /* ── Map ─────────────────────────────────────── */
 
