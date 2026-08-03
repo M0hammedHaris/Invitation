@@ -483,19 +483,17 @@ body {
 .is-copied .ico-check { display: block; }
 .is-copied { color: var(--accent); border-color: var(--accent); }
 
+/* Stacked full-width on phones, side by side once there is room */
 .venue-actions {
   display: flex;
   flex-direction: column;
   gap: .7rem;
-  margin-top: 1.3rem;
+  margin-top: 1.6rem;
 }
 
-.cal-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
+@media (min-width: 480px) {
+  .venue-actions { flex-direction: row; flex-wrap: wrap; }
 }
-.cal-actions .btn { font-size: .68rem; padding: .7rem 1.1rem; }
 
 /* ── Closing ─────────────────────────────────── */
 
