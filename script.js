@@ -163,7 +163,7 @@
     if (dock && dockLabel) {
       dock.addEventListener("click", function () {
         var data = {
-          title: "Mohammed Haris K & Haseena Begam A — Nikkah",
+          title: "Mohammed Haris K & Hasina Begam A — Nikkah",
           text: "You are invited to our Nikkah, Monday 28 September 2026 at HMO Auditorium.",
           url: window.location.href
         };

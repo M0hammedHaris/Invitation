@@ -4,7 +4,7 @@
 
 You are cordially invited to the Nikkah of
 
-**Mohammed Haris K & Haseena Begam A**
+**Mohammed Haris K & Hasina Begam A**
 
 **Date:** Monday, 28 September 2026
 **Venue:** HMO Auditorium
