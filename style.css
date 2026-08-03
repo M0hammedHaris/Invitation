@@ -483,6 +483,20 @@ body {
 .is-copied .ico-check { display: block; }
 .is-copied { color: var(--accent); border-color: var(--accent); }
 
+.venue-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-top: 1.3rem;
+}
+
+.cal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+.cal-actions .btn { font-size: .68rem; padding: .7rem 1.1rem; }
+
 /* ── Closing ─────────────────────────────────── */
 
 .closing {
@@ -592,7 +606,7 @@ body {
   .tile--count .count { margin: auto 0; }
   .tile--date  { grid-column: span 1; }
   .tile--venue { grid-column: span 3; display: flex; flex-direction: column; }
-  .tile--venue .btn { align-self: flex-start; margin-top: auto; }
+  .tile--venue .venue-actions { align-items: flex-start; margin-top: auto; }
   .tile--map   { grid-column: span 2; min-height: 280px; }
   .tile--share { grid-column: span 2; display: flex; flex-direction: column; }
   .tile--share .btn { align-self: flex-start; margin-top: auto; }

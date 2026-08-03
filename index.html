@@ -122,12 +122,22 @@
     <article class="tile tile--venue fade" data-fade>
       <p class="tile-tag">Venue</p>
       <p class="tile-title">HMO Auditorium</p>
-      <a class="btn btn-solid" id="directions-btn"
-         href="https://maps.app.goo.gl/dmvWqomb78h47xn18?g_st=ic"
-         target="_blank" rel="noopener noreferrer">
-        Get Directions
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
+      <div class="venue-actions">
+        <a class="btn btn-solid" id="directions-btn"
+           href="https://maps.app.goo.gl/dmvWqomb78h47xn18?g_st=ic"
+           target="_blank" rel="noopener noreferrer">
+          Get Directions
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+        <div class="cal-actions">
+          <a class="btn btn-outline" id="cal-google-btn" target="_blank" rel="noopener noreferrer">
+            Google Calendar
+          </a>
+          <button class="btn btn-outline" id="cal-ics-btn" type="button">
+            Download .ics
+          </button>
+        </div>
+      </div>
     </article>
 
     <!-- Map -->
