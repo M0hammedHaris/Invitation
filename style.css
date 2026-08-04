@@ -8,12 +8,15 @@
   --bg-2:    #f6ebe1;
   --paper:   #fffcf8;
   --ink:     #40332f;
-  --muted:   #7c6a63;
-  --rose:    #c08a86;
-  --rose-dk: #a06c6a;
-  --gold:    #bd9a55;
-  --gold-lt: #e6cf9a;
-  --green:   #6f8168;
+  --muted:   #6b574f;
+  --rose:    #985b57;
+  --rose-dk: #8e5854;
+  /* --gold stays light for strokes, frames and ornaments; text uses
+     --gold-text, which is dark enough to read on cream. */
+  --gold:      #bd9a55;
+  --gold-text: #806225;
+  --gold-lt:   #e6cf9a;
+  --green:   #55654e;
   --wax:     #a53f43;
   --wax-dk:  #7d2b30;
 
@@ -115,9 +118,10 @@ body.is-sealed { overflow: hidden; height: 100%; }
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
 }
+/* Shallow dip — the hints should breathe, not disappear */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50%      { opacity: .45; }
+  50%      { opacity: .68; }
 }
 
 .stage-skip {
@@ -308,7 +312,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
 }
 .letter-kicker {
   margin: 0 0 .3rem;
-  font-size: .52rem;
+  font-size: .56rem;
   letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--muted);
@@ -331,7 +335,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
   margin: .5rem 0 0;
   font-size: .6rem;
   letter-spacing: .28em;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 /* ══════════════════════════════════════════════
@@ -455,10 +459,10 @@ body.is-sealed { overflow: hidden; height: 100%; }
 }
 .verse-ref {
   margin: 0;
-  font-size: .68rem;
+  font-size: .7rem;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 /* ══════════════════════════════════════════════
@@ -565,12 +569,12 @@ body.is-sealed { overflow: hidden; height: 100%; }
   font-family: var(--f-display);
   font-size: .82rem;
   letter-spacing: .04em;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 .face-kicker {
   margin: 0 0 .9rem;
-  font-size: .58rem;
+  font-size: .62rem;
   letter-spacing: .28em;
   text-transform: uppercase;
   color: var(--muted);
@@ -605,11 +609,10 @@ body.is-sealed { overflow: hidden; height: 100%; }
   left: 0; right: 0;
   bottom: 1.15rem;
   margin: 0;
-  font-size: .58rem;
+  font-size: .62rem;
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: .75;
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -649,7 +652,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
 }
 .d-row small {
   display: block;
-  font-size: .56rem;
+  font-size: .6rem;
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -681,7 +684,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
 .btn-solid {
   margin-top: 1.4rem;
   color: #fffaf4;
-  background: linear-gradient(120deg, var(--green), #86977c);
+  background: linear-gradient(120deg, var(--green), #68795f);
   box-shadow: 0 10px 22px rgba(111, 129, 104, .3);
 }
 .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(111, 129, 104, .36); }
@@ -745,7 +748,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
 .count-cell span {
   display: block;
   margin-top: .4rem;
-  font-size: .54rem;
+  font-size: .58rem;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--muted);
@@ -779,7 +782,7 @@ body.is-sealed { overflow: hidden; height: 100%; }
   margin: .8rem 0 0;
   font-family: var(--f-arabic);
   font-size: 1.4rem;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 /* ── Larger screens ──────────────────────────── */
