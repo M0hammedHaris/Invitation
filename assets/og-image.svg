@@ -1,16 +1,82 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fbf7f0"/>
-      <stop offset="100%" stop-color="#f4ede1"/>
+    <linearGradient id="night" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#04140f"/>
+      <stop offset="50%" stop-color="#05201c"/>
+      <stop offset="100%" stop-color="#071c2e"/>
     </linearGradient>
+    <radialGradient id="em" cx="18%" cy="6%" r="70%">
+      <stop offset="0%" stop-color="#0d5c46" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0d5c46" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mg" cx="88%" cy="92%" r="62%">
+      <stop offset="0%" stop-color="#fb8500" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fb8500" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fu" cx="92%" cy="14%" r="48%">
+      <stop offset="0%" stop-color="#e5397f" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#e5397f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff6e9"/>
+      <stop offset="45%" stop-color="#f5d061"/>
+      <stop offset="70%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#fff6e9"/>
+    </linearGradient>
+    <linearGradient id="pill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb8500"/>
+      <stop offset="60%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#f5d061"/>
+    </linearGradient>
+    <pattern id="khatam" width="84" height="84" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#f5d061" stroke-width="1" opacity="0.14">
+        <path d="M42 4 L80 42 L42 80 L4 42 Z"/>
+        <path d="M15 15 H69 V69 H15 Z"/>
+        <circle cx="42" cy="42" r="6"/>
+      </g>
+    </pattern>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#b9974f" stroke-width="2" opacity="0.5"/>
-  <text x="600" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#6f8064">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
-  <text x="600" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Mohammed Haris K</text>
-  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="40" fill="#c99a9a">&amp;</text>
-  <text x="600" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#3c3530">Haseena Begam A</text>
-  <text x="600" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6b6058">request the honour of your presence at their Nikkah</text>
-  <text x="600" y="550" text-anchor="middle" font-family="Georgia, serif" font-size="24" letter-spacing="2" fill="#6f8064">MONDAY, 28 SEPTEMBER 2026</text>
+
+  <rect width="1200" height="630" fill="url(#night)"/>
+  <rect width="1200" height="630" fill="url(#khatam)"/>
+  <rect width="1200" height="630" fill="url(#em)"/>
+  <rect width="1200" height="630" fill="url(#mg)"/>
+  <rect width="1200" height="630" fill="url(#fu)"/>
+
+  <!-- Marigold garland -->
+  <path d="M0 10 Q 200 96 400 10 T 800 10 T 1200 10" fill="none" stroke="#f5d061" stroke-width="1.5" opacity="0.3"/>
+  <g>
+    <circle cx="60"   cy="42" r="7" fill="#ffb703"/><circle cx="140" cy="62" r="7" fill="#fb8500"/>
+    <circle cx="220"  cy="70" r="7" fill="#ffb703"/><circle cx="300" cy="62" r="7" fill="#e5397f"/>
+    <circle cx="380"  cy="40" r="7" fill="#ffb703"/><circle cx="460" cy="42" r="7" fill="#fb8500"/>
+    <circle cx="540"  cy="62" r="7" fill="#ffb703"/><circle cx="620" cy="70" r="7" fill="#fb8500"/>
+    <circle cx="700"  cy="62" r="7" fill="#e5397f"/><circle cx="780" cy="40" r="7" fill="#ffb703"/>
+    <circle cx="860"  cy="42" r="7" fill="#fb8500"/><circle cx="940" cy="62" r="7" fill="#ffb703"/>
+    <circle cx="1020" cy="70" r="7" fill="#fb8500"/><circle cx="1100" cy="62" r="7" fill="#ffb703"/>
+    <circle cx="1170" cy="40" r="7" fill="#e5397f"/>
+  </g>
+
+  <!-- Mihrab arch -->
+  <path d="M300 596 V300 C300 196 388 118 500 118 C612 118 700 196 700 300 V596"
+        transform="translate(100 0)" fill="none" stroke="#f5d061" stroke-width="2" opacity="0.5"/>
+
+  <!-- Khatam star -->
+  <g transform="translate(600 176)" fill="none" stroke="#ffb703" stroke-width="2.6">
+    <path d="M0 -22 L22 0 L0 22 L-22 0 Z"/>
+    <path d="M-15 -15 H15 V15 H-15 Z"/>
+    <circle cx="0" cy="0" r="4"/>
+  </g>
+
+  <text x="600" y="238" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" letter-spacing="8" fill="#ffb703">THE NIKKAH OF</text>
+
+  <text x="600" y="318" text-anchor="middle" font-family="Georgia, serif" font-size="66" font-weight="bold" fill="url(#leaf)">Mohammed Haris K</text>
+  <text x="600" y="372" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="34" fill="#e5397f">&amp;</text>
+  <text x="600" y="440" text-anchor="middle" font-family="Georgia, serif" font-size="66" font-weight="bold" fill="url(#leaf)">Hasina Begam A</text>
+
+  <!-- Date pill -->
+  <rect x="342" y="486" width="516" height="60" rx="30" fill="url(#pill)"/>
+  <text x="600" y="525" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="bold" letter-spacing="3" fill="#2a1400">MONDAY, 28 SEPTEMBER 2026</text>
+
+  <text x="600" y="590" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#d9cdbd">HMO Auditorium</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Georgia, serif" font-size="27" fill="#f5d061">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</text>
 </svg>
