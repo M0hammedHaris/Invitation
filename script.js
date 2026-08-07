@@ -330,6 +330,67 @@
     });
   }
 
+  /* ── 8. Gentle auto-scroll ──────────────────────────────────
+     Walks the guest down the invitation once, pausing long enough to
+     read each stop. Any hint that they want to steer — a wheel, a
+     touch, a key, the scrollbar — hands control back for good.      */
+
+  function autoTour() {
+    if (reduceMotion) { return; }
+
+    var stops = ["#verse", "#countdown", "#details", "#share"]
+      .map(function (sel) { return document.querySelector(sel); })
+      .filter(Boolean);
+    if (!stops.length) { return; }
+
+    var FIRST = 7000;   // time to take in the names and the date
+    var NEXT  = 6500;   // time to read each section after that
+    var i = 0;
+    var timer = null;
+    var stopped = false;
+    var settling = false;   // true while our own smooth scroll is running
+
+    function cancel() {
+      if (stopped) { return; }
+      stopped = true;
+      window.clearTimeout(timer);
+      ["wheel", "touchstart", "keydown", "pointerdown", "scroll"].forEach(function (ev) {
+        window.removeEventListener(ev, onIntent, true);
+      });
+    }
+
+    function onIntent(e) {
+      // Our own smooth scrolling fires scroll events; only a real input
+      // during that window counts as the guest taking over.
+      if (e.type === "scroll" && settling) { return; }
+      cancel();
+    }
+
+    function step() {
+      if (stopped || i >= stops.length) { cancel(); return; }
+
+      settling = true;
+      stops[i].scrollIntoView({ behavior: "smooth", block: "start" });
+      i++;
+
+      // Let the smooth scroll finish before we listen to scroll again
+      window.setTimeout(function () { settling = false; }, 1400);
+      timer = window.setTimeout(step, NEXT);
+    }
+
+    ["wheel", "touchstart", "keydown", "pointerdown", "scroll"].forEach(function (ev) {
+      window.addEventListener(ev, onIntent, { capture: true, passive: true });
+    });
+
+    // Don't count time while the tab is in the background
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { window.clearTimeout(timer); }
+      else if (!stopped) { timer = window.setTimeout(step, NEXT); }
+    });
+
+    timer = window.setTimeout(step, FIRST);
+  }
+
   /* ── boot ───────────────────────────────────────────────── */
 
   function init() {
@@ -340,6 +401,7 @@
     rise();
     addToCalendar();
     copyLink();
+    autoTour();
   }
 
   if (document.readyState === "loading") {

@@ -260,23 +260,35 @@ body {
   gap: .55rem;
 }
 
-/* 8-point khatam star */
+/* Hilal — the crescent moon */
 /* Both animations are declared together: an ambient `animation` on an
    element that also carries [data-in] would otherwise replace the entry
    animation and strand it at opacity 0. */
-.khatam {
+.hilal {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   color: var(--marigold);
+  filter: drop-shadow(0 0 16px rgba(255, 183, 3, .45));
   animation:
     liftIn 1s var(--ease) var(--d, 0s) both,
-    spin 34s linear infinite;
+    tilt 9s ease-in-out infinite;
 }
-.khatam svg { width: 100%; height: 100%; display: block; }
-.khatam path, .khatam circle { stroke: currentColor; stroke-width: 2.2; }
-.khatam--sm { width: 30px; height: 30px; color: var(--gold); opacity: .8; margin: 0 auto 1rem; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.hilal svg { width: 100%; height: 100%; display: block; }
+.hilal--sm {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 14px rgba(245, 208, 97, .4));
+}
+
+/* A moon should tilt, not spin. Named `tilt` because `sway` is already
+   taken by the garland buds. */
+@keyframes tilt {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(8deg); }
+}
 
 .kicker {
   margin: .3rem 0 0;
@@ -312,7 +324,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  /* Entry lift and gold sweep together — see the note on .khatam */
+  /* Entry lift and gold sweep together — see the note on .hilal */
   animation:
     liftIn 1s var(--ease) var(--d, 0s) both,
     leaf 9s ease-in-out infinite;
@@ -740,7 +752,7 @@ main { position: relative; z-index: 5; }
   .nm        { font-size: 3.4rem; }
   .amp       { width: min(100%, 340px); }
   .amp b     { font-size: 1.9rem; }
-  .khatam    { width: 48px; height: 48px; }
+  .hilal     { width: 54px; height: 54px; }
   .kicker    { font-size: .78rem; }
 
   /* Wide enough to hold one line instead of breaking after "at" */

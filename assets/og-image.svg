@@ -60,11 +60,13 @@
   <path d="M300 596 V300 C300 196 388 118 500 118 C612 118 700 196 700 300 V596"
         transform="translate(100 0)" fill="none" stroke="#f5d061" stroke-width="2" opacity="0.5"/>
 
-  <!-- Khatam star -->
-  <g transform="translate(600 176)" fill="none" stroke="#ffb703" stroke-width="2.6">
-    <path d="M0 -22 L22 0 L0 22 L-22 0 Z"/>
-    <path d="M-15 -15 H15 V15 H-15 Z"/>
-    <circle cx="0" cy="0" r="4"/>
+  <!-- Hilal, the crescent moon -->
+  <g transform="translate(600 176)">
+    <mask id="hilal-og">
+      <rect x="-32" y="-32" width="64" height="64" fill="#fff"/>
+      <circle cx="9" cy="-1" r="21" fill="#000"/>
+    </mask>
+    <circle cx="-2" cy="1" r="22" fill="#ffb703" mask="url(#hilal-og)"/>
   </g>
 
   <text x="600" y="238" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" letter-spacing="8" fill="#ffb703">THE NIKKAH OF</text>
