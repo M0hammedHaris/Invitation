@@ -236,10 +236,17 @@ body {
   animation: draw 2.6s var(--ease) .35s forwards;
 }
 .arch .arc--2 { opacity: .38; animation-delay: .7s; }
-.arch .arc--3 {
-  opacity: 0;
+
+.spark {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  transform: translateX(-50%);
   fill: var(--gold);
-  stroke: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 12px rgba(245, 208, 97, .65));
   animation: popStar .9s var(--ease) 2.4s forwards;
 }
 @keyframes draw    { to { stroke-dashoffset: 0; } }
@@ -717,6 +724,79 @@ main { position: relative; z-index: 5; }
   .wrap { padding: 5rem 2rem; }
   .map iframe { height: 320px; }
   .torana { height: 190px; }
+}
+
+/* ── Desktop: give the composition room to breathe ────────── */
+
+@media (min-width: 900px) {
+  :root { --maxw: 1040px; }
+
+  /* Clear the taller garland before the Bismillah starts */
+  .hero { padding: 12rem 2rem 6rem; gap: 1.8rem; }
+  .bismillah { font-size: 2rem; }
+
+  /* A bigger arch, so the names sit inside it rather than across it */
+  .arch-wrap { width: min(100%, 620px); padding: 4.4rem 2rem 1.8rem; }
+  .nm        { font-size: 3.4rem; }
+  .amp       { width: min(100%, 340px); }
+  .amp b     { font-size: 1.9rem; }
+  .khatam    { width: 48px; height: 48px; }
+  .kicker    { font-size: .78rem; }
+
+  /* Wide enough to hold one line instead of breaking after "at" */
+  .tagline   { max-width: 54ch; font-size: 1.08rem; }
+
+  .datepill      { padding: .85rem 2rem; }
+  .datepill span { font-size: 1.14rem; }
+
+  /* The panel is wide now, so hold the reading measure in the middle */
+  .panel--verse .arabic {
+    max-width: 26ch;
+    margin-inline: auto;
+    font-size: 2rem;
+  }
+  .panel--verse .verse-en {
+    max-width: 54ch;
+    margin-inline: auto;
+    font-size: 1.32rem;
+  }
+
+  .count      { gap: 1.2rem; }
+  .cell       { padding: 1.7rem .5rem; border-radius: 22px; }
+  .cell b     { font-size: 3.2rem; }
+  .cell span  { font-size: .64rem; }
+
+  /* Details split in two: the facts beside a full-height map */
+  #details .panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 2.4rem;
+  }
+  #details .panel-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #details .acts {
+    flex-direction: column;   /* the column is too narrow to sit them side by side */
+    margin-top: 1.9rem;
+  }
+  #details .acts .btn { flex: none; }
+  #details .map {
+    display: grid;
+    margin-top: 0;
+    min-height: 340px;
+  }
+  #details .map iframe { height: 100%; }
+
+  .note { font-size: 1.05rem; }
+}
+
+@media (min-width: 1280px) {
+  :root { --maxw: 1120px; }
+  .arch-wrap { width: min(100%, 680px); }
+  .nm        { font-size: 3.8rem; }
+  .torana    { height: 210px; }
 }
 
 /* ── Reduced motion ───────────────────────────────────────── */

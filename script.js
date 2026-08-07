@@ -13,48 +13,84 @@
      the curve exactly and restretches with the viewport.        */
 
   function garland() {
+    var svg = document.getElementById("torana");
+    if (!svg) { return; }
+
     var swags = [
-      { path: "swag-a", group: "buds-a", count: 34, r: 6.5, warm: true },
-      { path: "swag-b", group: "buds-b", count: 30, r: 4.6, warm: false }
+      { path: document.getElementById("swag-a"), group: document.getElementById("buds-a"),
+        y: 8,  depth: .72, r: 6.5, warm: true },
+      { path: document.getElementById("swag-b"), group: document.getElementById("buds-b"),
+        y: 30, depth: .78, r: 4.6, warm: false }
     ];
+    if (!swags[0].path || !swags[0].path.getPointAtLength) { return; }
 
-    swags.forEach(function (cfg) {
-      var path = document.getElementById(cfg.path);
-      var group = document.getElementById(cfg.group);
-      if (!path || !group || !path.getPointAtLength) { return; }
+    var ns = "http://www.w3.org/2000/svg";
 
-      var len = path.getTotalLength();
-      var ns = "http://www.w3.org/2000/svg";
+    function layout() {
+      var W = Math.max(320, window.innerWidth);
+      var H = Math.round(svg.getBoundingClientRect().height) || 150;
 
-      for (var i = 0; i <= cfg.count; i++) {
-        var p = path.getPointAtLength((len * i) / cfg.count);
+      // Map the viewBox 1:1 onto CSS pixels. Without this the buds stretch
+      // into ovals as the viewport widens past the authored viewBox.
+      svg.setAttribute("viewBox", "0 0 " + W + " " + H);
 
-        // Alternate marigold and saffron, with the odd fuchsia bud
-        var fill = i % 7 === 3 ? "#e5397f" : (i % 2 ? "#fb8500" : "#ffb703");
+      // Keep each swag a similar width whatever the screen, so a phone gets
+      // two arcs and an ultrawide gets many, rather than two enormous ones.
+      var arcs = Math.max(2, Math.round(W / 340));
+      var span = W / arcs;
 
-        var bud = document.createElementNS(ns, "circle");
-        bud.setAttribute("class", "bud");
-        bud.setAttribute("cx", p.x.toFixed(1));
-        bud.setAttribute("cy", p.y.toFixed(1));
-        bud.setAttribute("r", cfg.r);
-        bud.setAttribute("fill", fill);
-        bud.setAttribute("opacity", cfg.warm ? "0.95" : "0.6");
-        if (!reduceMotion) {
-          bud.style.animationDelay = ((i % 9) * 0.18).toFixed(2) + "s";
+      swags.forEach(function (s) {
+        var dip = (s.y + (H - s.y) * s.depth).toFixed(1);
+        var d = "M0 " + s.y;
+        for (var a = 0; a < arcs; a++) {
+          d += " Q " + ((a + 0.5) * span).toFixed(1) + " " + dip +
+               " " + ((a + 1) * span).toFixed(1) + " " + s.y;
         }
-        group.appendChild(bud);
+        s.path.setAttribute("d", d);
 
-        // A small highlight makes each bud read as a flower, not a dot
-        if (cfg.warm) {
-          var core = document.createElementNS(ns, "circle");
-          core.setAttribute("cx", p.x.toFixed(1));
-          core.setAttribute("cy", (p.y - 1).toFixed(1));
-          core.setAttribute("r", (cfg.r * 0.42).toFixed(1));
-          core.setAttribute("fill", "#fff3c4");
-          core.setAttribute("opacity", "0.75");
-          group.appendChild(core);
+        while (s.group.firstChild) { s.group.removeChild(s.group.firstChild); }
+
+        var len = s.path.getTotalLength();
+        var count = Math.max(16, Math.round(W / 34));
+
+        for (var i = 0; i <= count; i++) {
+          var p = s.path.getPointAtLength((len * i) / count);
+
+          // Alternate marigold and saffron, with the odd fuchsia bud
+          var fill = i % 7 === 3 ? "#e5397f" : (i % 2 ? "#fb8500" : "#ffb703");
+
+          var bud = document.createElementNS(ns, "circle");
+          bud.setAttribute("class", "bud");
+          bud.setAttribute("cx", p.x.toFixed(1));
+          bud.setAttribute("cy", p.y.toFixed(1));
+          bud.setAttribute("r", s.r);
+          bud.setAttribute("fill", fill);
+          bud.setAttribute("opacity", s.warm ? "0.95" : "0.6");
+          if (!reduceMotion) {
+            bud.style.animationDelay = ((i % 9) * 0.18).toFixed(2) + "s";
+          }
+          s.group.appendChild(bud);
+
+          // A small highlight makes each bud read as a flower, not a dot
+          if (s.warm) {
+            var core = document.createElementNS(ns, "circle");
+            core.setAttribute("cx", p.x.toFixed(1));
+            core.setAttribute("cy", (p.y - 1).toFixed(1));
+            core.setAttribute("r", (s.r * 0.42).toFixed(1));
+            core.setAttribute("fill", "#fff3c4");
+            core.setAttribute("opacity", "0.75");
+            s.group.appendChild(core);
+          }
         }
-      }
+      });
+    }
+
+    layout();
+
+    var pending = null;
+    window.addEventListener("resize", function () {
+      window.clearTimeout(pending);
+      pending = window.setTimeout(layout, 150);
     });
   }
 
@@ -216,6 +252,18 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
 
     Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+
+    // Safety net: on a tall desktop screen a lot of this sits in view at load,
+    // and nothing should ever be left stranded at opacity 0.
+    window.addEventListener("load", function () {
+      window.setTimeout(function () {
+        Array.prototype.forEach.call(items, function (el) {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add("seen");
+          }
+        });
+      }, 1000);
+    });
   }
 
   /* ── 6. Add to calendar ─────────────────────────────────── */
