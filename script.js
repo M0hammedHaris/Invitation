@@ -304,9 +304,9 @@
     var params = new URLSearchParams({
       action: "TEMPLATE",
       text: "Mohammed Haris K & Hasina Begam A — Nikkah",
-      // All-day on the 28th: Google treats the end date as exclusive.
-      dates: "20260928/20260929",
-      details: "You are cordially invited to the Nikkah of Mohammed Haris K & Hasina Begam A.",
+      // Timed to the actual ceremony window, 11:30 AM to 12:30 PM.
+      dates: "20260928T113000/20260928T123000",
+      details: "You are cordially invited to the Nikkah of Mohammed Haris K & Hasina Begam A. Lunch to follow.",
       location: "HMO Auditorium"
     });
 
