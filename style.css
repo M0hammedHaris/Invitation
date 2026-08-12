@@ -293,17 +293,18 @@ body:not(.is-loading) #petals { opacity: 1; }
 }
 
 .hero-date {
-  margin: 1.1rem 0 0;
+  margin: 1.15rem 0 0;
   display: flex;
   align-items: center;
   gap: .7rem;
   font-family: var(--f-serif);
-  font-size: clamp(1rem, 4.2vw, 1.3rem);
-  letter-spacing: .18em;
+  font-size: clamp(1.1rem, 4.8vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--sage-dark);
+  color: var(--ink);
 }
-.hero-date i { color: var(--gold); font-style: normal; }
+.hero-date i { color: var(--gold); font-style: normal; font-weight: 600; }
 
 /* Rules */
 .rule, .rule-wide {
